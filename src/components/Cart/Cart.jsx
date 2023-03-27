@@ -2,7 +2,6 @@ import React from 'react';
 import './Cart.scss';
 
 // Material-UI icon
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import CloseIcon from '@mui/icons-material/Close';
 
 const Cart = () => {
