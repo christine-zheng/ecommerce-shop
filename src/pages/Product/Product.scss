@@ -35,24 +35,31 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    // gap: 10px;
 
-    .price {
-      color: #2879fe;
-      font-size: 25px;
-      font-weight: 500;
+    h1 {
+      margin-bottom: 10px;
     }
 
     p {
       font-size: 16px;
       font-weight: 300;
       text-align: justify;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      color: #2879fe;
+      font-size: 25px;
+      font-weight: 500;
+      margin-bottom: 30px;
     }
 
     .quantity {
       display: flex;
       align-items: center;
       gap: 10px;
+      margin-bottom: 30px;
 
       button {
         width: 35px;
@@ -77,6 +84,7 @@
       justify-content: center;
       gap: 20px;
       cursor: pointer;
+      margin-bottom: 30px;
     }
 
     .link {
@@ -99,6 +107,8 @@
       gap: 10px;
       color: gray;
       font-size: 14px;
+      margin-top: 30px;
+      margin-bottom: 30px;
 
       hr {
         width: 200px;
