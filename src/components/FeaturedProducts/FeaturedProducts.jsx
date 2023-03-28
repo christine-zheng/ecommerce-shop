@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import useFetch from '../../hooks/useFetch';
 import Card from '../Card/Card';
 import './FeaturedProducts.scss';
-import axios from 'axios';
 
 const FeaturedProducts = ({ type }) => {
   // const data = [
@@ -40,33 +40,10 @@ const FeaturedProducts = ({ type }) => {
   //   },
   // ];
 
-  const [data, setData] = useState([]);
-
   // fetch data
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // how data is fetched when using strapi
-        // send API token in the header
-        const res = await axios.get(
-          process.env.REACT_APP_API_URL +
-            `/products?populate=*&filters[type][$eq]=${type}`,
-          {
-            headers: {
-              Authorization: 'bearer ' + process.env.REACT_APP_API_TOKEN,
-            },
-          }
-        );
-
-        console.log(res.data.data);
-        setData(res.data.data);
-      } catch (error) {
-        console.log('Caught Error: ', error);
-      }
-    };
-
-    fetchData();
-  }, [type]);
+  const { data, loading, error } = useFetch(
+    `/products?populate=*&filters[type][$eq]=${type}`
+  );
 
   return (
     <div className="featuredProducts">
@@ -82,9 +59,11 @@ const FeaturedProducts = ({ type }) => {
       </div>
 
       <div className="bottom">
-        {data.map((item) => (
-          <Card key={item.id} item={item} />
-        ))}
+        {error
+          ? 'Something went wrong!'
+          : loading
+          ? 'loading...'
+          : data?.map((item) => <Card key={item.id} item={item} />)}
       </div>
     </div>
   );
