@@ -99,12 +99,18 @@ const Products = () => {
           alt=""
         />
 
-        <List
-          catId={catId}
-          maxPrice={maxPrice}
-          sort={sort}
-          subCats={selectedSubCats}
-        />
+        {error ? (
+          'Something went wrong!'
+        ) : loading ? (
+          'loading...'
+        ) : (
+          <List
+            catId={catId}
+            maxPrice={maxPrice}
+            sort={sort}
+            subCats={selectedSubCats}
+          />
+        )}
       </div>
     </div>
   );

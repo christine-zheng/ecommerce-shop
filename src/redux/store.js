@@ -1,6 +1,7 @@
 import cartReducer from './cartReducer';
-
 import { configureStore } from '@reduxjs/toolkit';
+
+// use redux-persist to persist the Cart
 import {
   persistStore,
   persistReducer,
