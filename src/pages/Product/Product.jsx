@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
+import { addToCart } from '../../redux/cartReducer';
 import './Product.scss';
 
 // Material UI icons
@@ -12,6 +14,9 @@ import BalanceIcon from '@mui/icons-material/Balance';
 const Product = () => {
   const [selectedImg, setSelectedImg] = useState('img');
   const [quantity, setQuantity] = useState(1);
+
+  // hook to dispatch action: addToCart
+  const dispatch = useDispatch();
 
   // fetch product data
   const productId = useParams().id;
@@ -75,7 +80,21 @@ const Product = () => {
               <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
             </div>
 
-            <button className="add">
+            <button
+              className="add"
+              onClick={() =>
+                dispatch(
+                  addToCart({
+                    id: data.id,
+                    title: data.attributes.title,
+                    desc: data.attributes.desc,
+                    price: data.attributes.price,
+                    img: data.attributes.img.data.attributes.url,
+                    quantity,
+                  })
+                )
+              }
+            >
               <AddShoppingCartIcon />
               ADD TO CART
             </button>
