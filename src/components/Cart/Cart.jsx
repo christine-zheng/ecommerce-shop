@@ -6,6 +6,10 @@ import './Cart.scss';
 // Material-UI icon
 import CloseIcon from '@mui/icons-material/Close';
 
+// Stripe for handling checkout/payment
+import { loadStripe } from '@stripe/stripe-js';
+import { makeRequest } from '../../makeRequest';
+
 const Cart = () => {
   // access the cart state (redux store)
   const products = useSelector((state) => state.cart.products);
@@ -19,27 +23,27 @@ const Cart = () => {
     return subtotal.toFixed(2);
   };
 
-  // const data = [
-  //   {
-  //     id: 1,
-  //     img: 'https://images.pexels.com/photos/1972115/pexels-photo-1972115.jpeg?auto=compress&cs=tinysrgb&w=1600',
-  //     img2: 'https://images.pexels.com/photos/1163194/pexels-photo-1163194.jpeg?auto=compress&cs=tinysrgb&w=1600',
-  //     title: 'Long Sleeve Graphic T-Shirt',
-  //     desc: 'Graphic T-Shirt',
-  //     isNew: true,
-  //     oldPrice: 19,
-  //     price: 12,
-  //   },
-  //   {
-  //     id: 2,
-  //     img: 'https://images.pexels.com/photos/1759622/pexels-photo-1759622.jpeg?auto=compress&cs=tinysrgb&w=1600',
-  //     title: 'Beanie',
-  //     desc: 'Yellow Beanie',
-  //     isNew: true,
-  //     oldPrice: 19,
-  //     price: 12,
-  //   },
-  // ];
+  // loadStripe to initialize a Stripe object
+  const stripePromise = loadStripe(
+    'pk_test_51Mr48pLoEKrzVQdLUEpRsiJTnhZs9evxnScr47bdGymPagTjm5NQaxZEk8yxUJmfD5f2N9fVQzutZn3LVUHKiNmx00FRHFwuEP'
+  );
+
+  const handleCheckout = async () => {
+    try {
+      const stripe = await stripePromise;
+
+      const res = await makeRequest.post('/orders', {
+        products,
+      });
+
+      // go to Stripe's Checkout page
+      await stripe.redirectToCheckout({
+        sessionId: res.data.stripeSession.id,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="cart">
@@ -71,7 +75,7 @@ const Cart = () => {
         <span>${getSubtotal()}</span>
       </div>
 
-      <button>PROCEED TO CHECKOUT</button>
+      <button onClick={handleCheckout}>PROCEED TO CHECKOUT</button>
       <span className="reset" onClick={() => dispatch(resetCart())}>
         Reset Cart
       </span>
