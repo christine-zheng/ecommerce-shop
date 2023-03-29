@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import './Navbar.scss';
@@ -12,6 +13,15 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+
+  // access the cart state (redux store)
+  const products = useSelector((state) => state.cart.products);
+
+  const getTotalCartItems = () => {
+    let count = 0;
+    products.forEach((item) => (count += item.quantity));
+    return count;
+  };
 
   return (
     <div className="navbar">
@@ -84,7 +94,7 @@ const Navbar = () => {
 
             <div className="cartIcon" onClick={() => setOpen(!open)}>
               <ShoppingCartOutlinedIcon />
-              <span>0</span>
+              <span>{getTotalCartItems()}</span>
             </div>
           </div>
         </div>
