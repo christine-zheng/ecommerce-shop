@@ -14,7 +14,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
-  // if checkout was successful, reset the cart item count to 0
+  // if checkout was successful, reset cart item count to 0
   const [searchParams] = useSearchParams();
   const resetCartCount = searchParams.get('success') === 'true';
 
@@ -33,10 +33,6 @@ const Navbar = () => {
         <div className="left">
           <div className="item">
             <img src="/img/en.png" alt="" />
-            <KeyboardArrowDownIcon />
-          </div>
-
-          <div className="item">
             <span>USD</span>
             <KeyboardArrowDownIcon />
           </div>
@@ -53,27 +49,21 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className="item">
+          {/* <div className="item">
             <Link className="link" to="/products/3">
               Children
             </Link>
-          </div>
+          </div> */}
         </div>
 
         <div className="center">
           <Link className="link" to="/">
-            STORE
+            URBAN APPAREL
           </Link>
         </div>
 
         <div className="right">
-          <div className="item">
-            <Link className="link" to="/">
-              Home
-            </Link>
-          </div>
-
-          <div className="item">
+          {/* <div className="item">
             <Link className="link" to="/">
               About
             </Link>
@@ -89,7 +79,7 @@ const Navbar = () => {
             <Link className="link" to="/">
               Stores
             </Link>
-          </div>
+          </div> */}
 
           <div className="icons">
             <SearchIcon />
