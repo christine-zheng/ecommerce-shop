@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import './Navbar.scss';
 
@@ -13,6 +13,10 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+
+  // if checkout was successful, reset the cart item count to 0
+  const [searchParams] = useSearchParams();
+  const resetCartCount = searchParams.get('success') === 'true';
 
   // access the cart state (redux store)
   const products = useSelector((state) => state.cart.products);
@@ -94,7 +98,7 @@ const Navbar = () => {
 
             <div className="cartIcon" onClick={() => setOpen(!open)}>
               <ShoppingCartOutlinedIcon />
-              <span>{getTotalCartItems()}</span>
+              <span>{resetCartCount ? 0 : getTotalCartItems()}</span>
             </div>
           </div>
         </div>
