@@ -1,31 +1,22 @@
 import React from 'react';
 import './Contact.scss';
 
-// Material UI icons
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import GoogleIcon from '@mui/icons-material/Google';
-import PinterestIcon from '@mui/icons-material/Pinterest';
-
 const Contact = () => {
   return (
     <div className="contact">
       <div className="wrapper">
-        <span>BE IN TOUCH WITH US:</span>
+        <div className="message">
+          <h1>JOIN OUR COMMUNITY</h1>
+          <span>
+            Subscribe to receive Urban Apparel emails and get the latest on new
+            arrivals, sales, exclusive content, events and more!
+          </span>
+        </div>
 
         <div className="mail">
           <input type="email" placeholder="Enter your email..." />
 
-          <button>JOIN US</button>
-        </div>
-
-        <div className="icons">
-          <FacebookIcon />
-          <InstagramIcon />
-          <TwitterIcon />
-          <GoogleIcon />
-          <PinterestIcon />
+          <button>SUBSCRIBE</button>
         </div>
       </div>
     </div>
