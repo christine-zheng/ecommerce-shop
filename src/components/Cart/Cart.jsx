@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeItem, resetCart } from '../../redux/cartReducer';
 import './Cart.scss';
@@ -16,6 +17,16 @@ const Cart = () => {
 
   // hook to dispatch actions: removeItem, resetCart
   const dispatch = useDispatch();
+
+  // if checkout was successful, dispatch action resetCart
+  const [searchParams] = useSearchParams();
+  useEffect(() => {
+    const resetCartCount = searchParams.get('success') === 'true';
+
+    if (resetCartCount) {
+      dispatch(resetCart());
+    }
+  }, [searchParams, dispatch]);
 
   const getSubtotal = () => {
     let subtotal = 0;
