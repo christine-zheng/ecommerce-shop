@@ -10,7 +10,7 @@ const Products = () => {
   const catId = parseInt(param.id);
 
   // state
-  const [maxPrice, setMaxPrice] = useState(1000);
+  const [maxPrice, setMaxPrice] = useState(500);
   const [sort, setSort] = useState(null);
   const [selectedSubCats, setSelectedSubCats] = useState([]);
 
@@ -35,7 +35,7 @@ const Products = () => {
     <div className="products">
       <div className="left">
         <div className="filterItem">
-          <h2>Product Categories</h2>
+          <h2>Browse By:</h2>
 
           {data?.map((item) => (
             <div className="inputItem" key={item.id}>
@@ -51,14 +51,14 @@ const Products = () => {
         </div>
 
         <div className="filterItem">
-          <h2>Filter by Price</h2>
+          <h2>Price Range:</h2>
           <div className="inputItem">
             <div className="filterPrice">
               <span className="spanMin">$0</span>
               <input
                 type="range"
                 min={0}
-                max={1000}
+                max={500}
                 onChange={(e) => setMaxPrice(e.target.value)}
               />
               <span className="spanMax">${maxPrice}</span>
@@ -67,7 +67,7 @@ const Products = () => {
         </div>
 
         <div className="filterItem">
-          <h2>Sort By</h2>
+          <h2>Sort By:</h2>
           <div className="inputItem">
             <input
               type="radio"
