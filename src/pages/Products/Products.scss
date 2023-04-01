@@ -1,7 +1,9 @@
 .products {
+  position: relative;
   padding: 30px 50px;
   display: flex;
   gap: 10px;
+  margin-bottom: 70px;
 
   //  after 50px, the products filter/sort panel will stay/sticky
   .left {
