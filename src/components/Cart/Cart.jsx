@@ -58,38 +58,44 @@ const Cart = () => {
 
   return (
     <div className="cart">
-      <h1>My Bag</h1>
-      {products?.map((item) => (
-        <div key={item.id} className="item">
-          <img src={process.env.REACT_APP_UPLOAD_URL + item.img} alt="" />
+      <div className="cart-header">
+        <h1>My Bag</h1>
+      </div>
+      <div className="items">
+        {products?.map((item) => (
+          <div key={item.id} className="item">
+            <img src={process.env.REACT_APP_UPLOAD_URL + item.img} alt="" />
 
-          <div className="content">
-            <div className="details">
-              <h1>{item.title}</h1>
-              <p>{item.desc?.substring(0, 100)}</p>
+            <div className="content">
+              <div className="details">
+                <h1>{item.title}</h1>
+                <p>{item.desc?.substring(0, 100)}</p>
 
-              <div className="price">
-                {item.quantity} x ${item.price}
+                <div className="price">
+                  {item.quantity} x ${item.price}
+                </div>
               </div>
+
+              <CloseIcon
+                className="delete"
+                onClick={() => dispatch(removeItem(item.id))}
+              />
             </div>
-
-            <CloseIcon
-              className="delete"
-              onClick={() => dispatch(removeItem(item.id))}
-            />
           </div>
-        </div>
-      ))}
-
-      <div className="total">
-        <span>SUBTOTAL</span>
-        <span>${getSubtotal()}</span>
+        ))}
       </div>
 
-      <button onClick={handleCheckout}>PROCEED TO CHECKOUT</button>
-      <span className="reset" onClick={() => dispatch(resetCart())}>
-        Reset Cart
-      </span>
+      <div className="cart-footer">
+        <div className="total">
+          <span>SUBTOTAL</span>
+          <span>${getSubtotal()}</span>
+        </div>
+
+        <button onClick={handleCheckout}>PROCEED TO CHECKOUT</button>
+        <span className="reset" onClick={() => dispatch(resetCart())}>
+          Reset Cart
+        </span>
+      </div>
     </div>
   );
 };
