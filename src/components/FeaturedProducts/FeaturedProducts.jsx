@@ -48,13 +48,11 @@ const FeaturedProducts = ({ type }) => {
   return (
     <div className="featuredProducts">
       <div className="top">
-        <h1>{type} products</h1>
+        <h1>{type}</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
-          suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
-          lacus vel facilisis labore et dolore magna aliqua. Quis ipsum
-          suspendisse ultrices gravida. Risus commodo viverra maecenas.
+          {type === 'featured'
+            ? 'Discover the must-haves for this season before they sell out'
+            : 'Check out our current popular and bestsellers items'}
         </p>
       </div>
 
