@@ -13,7 +13,7 @@ const Categories = () => {
             alt=""
           />
           <button>
-            <Link className="link" to="/products/1">
+            <Link className="link" to="/products/3">
               Sale
             </Link>
           </button>
@@ -38,8 +38,8 @@ const Categories = () => {
             alt=""
           />
           <button>
-            <Link to="/products/1" className="link">
-              New Season
+            <Link to="/products/4" className="link">
+              New Arrivals
             </Link>
           </button>
         </div>
@@ -50,11 +50,11 @@ const Categories = () => {
           <div className="col">
             <div className="row">
               <img
-                src="https://images.pexels.com/photos/1192609/pexels-photo-1192609.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://images.pexels.com/photos/1036627/pexels-photo-1036627.jpeg?auto=compress&cs=tinysrgb&w=1600"
                 alt=""
               />
               <button>
-                <Link to="/products/1" className="link">
+                <Link to="/products/2" className="link">
                   Men
                 </Link>
               </button>
@@ -68,7 +68,7 @@ const Categories = () => {
                 alt=""
               />
               <button>
-                <Link to="/products/1" className="link">
+                <Link to="/products/5" className="link">
                   Accessories
                 </Link>
               </button>
@@ -78,11 +78,11 @@ const Categories = () => {
 
         <div className="row">
           <img
-            src="https://images.pexels.com/photos/1159670/pexels-photo-1159670.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src="https://images.pexels.com/photos/1449844/pexels-photo-1449844.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt=""
           />
           <button>
-            <Link to="/products/1" className="link">
+            <Link to="/products/6" className="link">
               Shoes
             </Link>
           </button>
