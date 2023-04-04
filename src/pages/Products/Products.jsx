@@ -11,7 +11,7 @@ const Products = () => {
 
   // state
   const [maxPrice, setMaxPrice] = useState(500);
-  const [sort, setSort] = useState(null);
+  const [sort, setSort] = useState('');
   const [selectedSubCats, setSelectedSubCats] = useState([]);
 
   // fetch all subcategories (ie t-shirt, dress) with the related category ID
