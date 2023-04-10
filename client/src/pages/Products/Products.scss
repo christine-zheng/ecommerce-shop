@@ -1,0 +1,62 @@
+.products {
+  position: relative;
+  padding: 30px 50px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 70px;
+
+  //  after 50px, the products filter/sort panel will stay/sticky
+  .left {
+    flex: 1;
+    position: sticky;
+    height: 100%;
+    top: 50px;
+
+    .filterItem {
+      margin-bottom: 30px;
+
+      h2 {
+        font-weight: 500;
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+
+      .inputItem {
+        margin-bottom: 6px;
+        font-size: 13px;
+
+        label {
+          margin-left: 10px;
+        }
+
+        .filterPrice {
+          display: flex;
+          align-items: center;
+
+          .spanMin {
+            margin-right: 8px;
+          }
+
+          .spanMax {
+            margin-left: 8px;
+          }
+
+          input {
+            width: 130px;
+          }
+        }
+      }
+    }
+  }
+
+  .right {
+    flex: 3;
+
+    .catImg {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      margin-bottom: 50px;
+    }
+  }
+}
