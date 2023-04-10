@@ -1,24 +1,119 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+.DS_Store
+
+############################
+# client
+############################
 
 # dependencies
-/node_modules
-/.pnp
-.pnp.js
+client/node_modules
+client/.pnp
+client/.pnp.js
 
 # testing
-/coverage
+client/coverage
 
 # production
-/build
+client/build
 
 # misc
-.env
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+client/.env
+client/.DS_Store
+client/.env.local
+client/.env.development.local
+client/.env.test.local
+client/.env.production.local
+client/package-lock.json
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*
+
+
+############################
+# api
+############################
+
+# OS X
+api/.DS_Store
+api/.AppleDouble
+api/.LSOverride
+api/Icon
+api/.Spotlight-V100
+api/.Trashes
+api/._*
+
+# Linux
+api/*~
+
+# Windows
+api/Thumbs.db
+api/ehthumbs.db
+api/Desktop.ini
+api/$RECYCLE.BIN/
+api/*.cab
+api/*.msi
+api/*.msm
+api/*.msp
+
+# Packages
+api/*.7z
+api/*.csv
+api/*.dat
+api/*.dmg
+api/*.gz
+api/*.iso
+api/*.jar
+api/*.rar
+api/*.tar
+api/*.zip
+api/*.com
+api/*.class
+api/*.dll
+api/*.exe
+api/*.o
+api/*.seed
+api/*.so
+api/*.swo
+api/*.swp
+api/*.swn
+api/*.swm
+api/*.out
+api/*.pid
+
+# Logs and databases
+api/.tmp
+api/*.log
+api/*.sql
+api/*.sqlite
+api/*.sqlite3
+
+# Misc.
+api/package-lock.json
+api/*#
+api/ssl
+api/.idea
+api/nbproject
+api/public/uploads/*
+!api/public/uploads/.gitkeep
+
+# Node.js
+api/lib-cov
+api/lcov.info
+api/pids
+api/logs
+api/results
+api/node_modules
+api/.node_history
+
+# Tests
+api/testApp
+api/coverage
+
+# Strapi
+api/.env
+api/license.txt
+api/exports
+api/*.cache
+api/dist
+api/build
+api/.strapi-updater.json
