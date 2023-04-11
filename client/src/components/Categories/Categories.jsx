@@ -8,24 +8,19 @@ const Categories = () => {
     <div className="categories">
       <div className="col">
         <div className="row">
-          <img
-            src="https://images.pexels.com/photos/818992/pexels-photo-818992.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt=""
-          />
-          <button>
-            <Link className="link" to="/products/3">
-              Sale
-            </Link>
-          </button>
-        </div>
-        <div className="row">
-          <img
-            src="https://images.pexels.com/photos/2036646/pexels-photo-2036646.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt=""
-          />
+          <img src="/img/women.webp" alt="" />
           <button>
             <Link to="/products/1" className="link">
               Women
+            </Link>
+          </button>
+        </div>
+
+        <div className="row">
+          <img src="/img/sale.png" alt="" />
+          <button>
+            <Link className="link" to="/products/3">
+              Sale
             </Link>
           </button>
         </div>
@@ -33,10 +28,7 @@ const Categories = () => {
 
       <div className="col">
         <div className="row">
-          <img
-            src="https://images.pexels.com/photos/1813947/pexels-photo-1813947.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt=""
-          />
+          <img src="/img/new.webp" alt="" />
           <button>
             <Link to="/products/4" className="link">
               New Arrivals
@@ -49,10 +41,7 @@ const Categories = () => {
         <div className="row">
           <div className="col">
             <div className="row">
-              <img
-                src="https://images.pexels.com/photos/1036627/pexels-photo-1036627.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt=""
-              />
+              <img src="/img/men.webp" alt="" />
               <button>
                 <Link to="/products/2" className="link">
                   Men
@@ -64,7 +53,7 @@ const Categories = () => {
           <div className="col">
             <div className="row">
               <img
-                src="https://images.pexels.com/photos/2703202/pexels-photo-2703202.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://images.pexels.com/photos/2876033/pexels-photo-2876033.jpeg?auto=compress&cs=tinysrgb&w=1600"
                 alt=""
               />
               <button>
