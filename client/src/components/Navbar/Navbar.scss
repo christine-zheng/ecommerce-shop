@@ -11,6 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 25px;
 
     .item {
       display: flex;
@@ -26,11 +27,12 @@
     .left {
       display: flex;
       gap: 25px;
-    }
 
-    .center {
-      font-size: 30px;
-      letter-spacing: 1.8px;
+      .brand {
+        font-size: 30px;
+        letter-spacing: 1.2px;
+        font-weight: 600;
+      }
     }
 
     .right {

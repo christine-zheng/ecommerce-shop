@@ -5,7 +5,6 @@ import Cart from '../Cart/Cart';
 import './Navbar.scss';
 
 // Material-UI icons
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import SearchIcon from '@mui/icons-material/Search';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
@@ -31,10 +30,10 @@ const Navbar = () => {
     <div className="navbar">
       <div className="wrapper">
         <div className="left">
-          <div className="item">
-            <img src="/img/en.png" alt="" />
-            <span>USD</span>
-            <KeyboardArrowDownIcon />
+          <div className="brand">
+            <Link className="link" to="/">
+              URBAN APPAREL
+            </Link>
           </div>
 
           <div className="item">
@@ -49,42 +48,36 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* <div className="item">
-            <Link className="link" to="/products/3">
-              Children
+          <div className="item">
+            <Link className="link" to="/products/5">
+              Accessories
             </Link>
-          </div> */}
-        </div>
+          </div>
 
-        <div className="center">
-          <Link className="link" to="/">
-            URBAN APPAREL
-          </Link>
+          <div className="item">
+            <Link className="link" to="/products/6">
+              Shoes
+            </Link>
+          </div>
+
+          <div className="item">
+            <Link className="link" to="/products/4">
+              New Arrivals
+            </Link>
+          </div>
+
+          <div className="item">
+            <Link className="link" to="/products/3">
+              Sale
+            </Link>
+          </div>
         </div>
 
         <div className="right">
-          {/* <div className="item">
-            <Link className="link" to="/">
-              About
-            </Link>
-          </div>
-
-          <div className="item">
-            <Link className="link" to="/">
-              Contact
-            </Link>
-          </div>
-
-          <div className="item">
-            <Link className="link" to="/">
-              Stores
-            </Link>
-          </div> */}
-
           <div className="icons">
             <SearchIcon />
-            <PersonOutlineOutlinedIcon />
             <FavoriteBorderOutlinedIcon />
+            <PersonOutlineOutlinedIcon />
 
             <div className="cartIcon" onClick={() => setOpen(!open)}>
               <ShoppingCartOutlinedIcon />
