@@ -14,6 +14,34 @@ const Products = () => {
   const [sort, setSort] = useState('');
   const [selectedSubCats, setSelectedSubCats] = useState([]);
 
+  // category name & image
+  const info = [
+    [
+      'https://images.pexels.com/photos/1296372/pexels-photo-1296372.jpeg?auto=compress&cs=tinysrgb&w=1600',
+      'Women',
+    ],
+    [
+      'https://images.pexels.com/photos/3588632/pexels-photo-3588632.jpeg?auto=compress&cs=tinysrgb&w=1600',
+      'Men',
+    ],
+    [
+      'https://images.pexels.com/photos/5662862/pexels-photo-5662862.png?auto=compress&cs=tinysrgb&w=1600',
+      'Sale',
+    ],
+    [
+      'https://images.pexels.com/photos/862848/pexels-photo-862848.jpeg?auto=compress&cs=tinysrgb&w=1600',
+      'New Arrivals',
+    ],
+    [
+      'https://images.pexels.com/photos/2344013/pexels-photo-2344013.jpeg?auto=compress&cs=tinysrgb&w=1600',
+      'Accessories',
+    ],
+    [
+      'https://images.pexels.com/photos/7760804/pexels-photo-7760804.jpeg?auto=compress&cs=tinysrgb&w=1600',
+      'Shoes',
+    ],
+  ];
+
   // fetch all subcategories (ie t-shirt, dress) with the related category ID
   const { data, loading, error } = useFetch(
     `/sub-categories?filters[categories][id][$eq]=${catId}`
@@ -93,11 +121,7 @@ const Products = () => {
       </div>
 
       <div className="right">
-        <img
-          className="catImg"
-          src="https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1600"
-          alt=""
-        />
+        <img className="catImg" src={info[catId - 1][0]} alt="" />
 
         {error ? (
           'Something went wrong!'
