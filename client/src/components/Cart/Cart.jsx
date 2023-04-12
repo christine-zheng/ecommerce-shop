@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeItem, resetCart } from '../../redux/cartReducer';
 import './Cart.scss';
@@ -59,9 +59,20 @@ const Cart = () => {
   return (
     <div className="cart">
       <div className="cart-header">
-        <h1>My Bag</h1>
+        <h1>Your Bag</h1>
       </div>
       <div className="items">
+        {products.length === 0 && (
+          <div className="empty-cart">
+            <p>Your bag is currently empty.</p>
+            <p>Not sure where to start?</p>
+            <p className="suggestion">
+              <Link className="link" to="/products/4">
+                Shop New Arrivals
+              </Link>
+            </p>
+          </div>
+        )}
         {products?.map((item) => (
           <div key={item.id} className="item">
             <img src={process.env.REACT_APP_UPLOAD_URL + item.img} alt="" />
@@ -93,7 +104,7 @@ const Cart = () => {
 
         <button onClick={handleCheckout}>PROCEED TO CHECKOUT</button>
         <span className="reset" onClick={() => dispatch(resetCart())}>
-          Reset Cart
+          Clear Cart
         </span>
       </div>
     </div>

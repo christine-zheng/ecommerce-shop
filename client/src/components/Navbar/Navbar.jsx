@@ -8,7 +8,7 @@ import './Navbar.scss';
 import SearchIcon from '@mui/icons-material/Search';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -80,7 +80,7 @@ const Navbar = () => {
             <PersonOutlineOutlinedIcon />
 
             <div className="cartIcon" onClick={() => setOpen(!open)}>
-              <ShoppingCartOutlinedIcon />
+              <ShoppingBagOutlinedIcon />
               <span>{resetCartCount ? 0 : getTotalCartItems()}</span>
             </div>
           </div>

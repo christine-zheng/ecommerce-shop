@@ -37,6 +37,27 @@
     padding-right: 10px;
     padding-top: 20px;
 
+    .empty-cart {
+      font-size: 18px;
+      letter-spacing: 0.1px;
+
+      p {
+        &:first-child {
+          padding-bottom: 2px;
+        }
+      }
+
+      .suggestion {
+        margin-top: 25px;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
     .item {
       display: flex;
       gap: 20px;
