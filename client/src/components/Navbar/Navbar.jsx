@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, NavLink, useSearchParams } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import './Navbar.scss';
 
@@ -37,39 +37,39 @@ const Navbar = () => {
           </div>
 
           <div className="item">
-            <Link className="link" to="/products/1">
+            <NavLink className="link" to="/products/1" activeClassName="active">
               Women
-            </Link>
+            </NavLink>
           </div>
 
           <div className="item">
-            <Link className="link" to="/products/2">
+            <NavLink className="link" to="/products/2" activeClassName="active">
               Men
-            </Link>
+            </NavLink>
           </div>
 
           <div className="item">
-            <Link className="link" to="/products/5">
+            <NavLink className="link" to="/products/5" activeClassName="active">
               Accessories
-            </Link>
+            </NavLink>
           </div>
 
           <div className="item">
-            <Link className="link" to="/products/6">
+            <NavLink className="link" to="/products/6" activeClassName="active">
               Shoes
-            </Link>
+            </NavLink>
           </div>
 
           <div className="item">
-            <Link className="link" to="/products/4">
+            <NavLink className="link" to="/products/4" activeClassName="active">
               New Arrivals
-            </Link>
+            </NavLink>
           </div>
 
           <div className="item">
-            <Link className="link" to="/products/3">
+            <NavLink className="link" to="/products/3" activeClassName="active">
               Sale
-            </Link>
+            </NavLink>
           </div>
         </div>
 
