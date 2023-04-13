@@ -1,0 +1,27 @@
+.accordion {
+  width: 325px;
+  padding-top: 10px;
+
+  .accordion-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+
+    .icon {
+      font-size: 17px;
+      color: rgb(80, 80, 80);
+    }
+  }
+
+  .accordion-content {
+    color: gray;
+    padding-top: 10px;
+    padding-bottom: 19px;
+
+    .accordion-p {
+      font-size: 12px;
+      font-weight: 400;
+      margin-bottom: 5px;
+    }
+  }
+}
