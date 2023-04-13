@@ -24,8 +24,8 @@ const Accordion = ({ title, content }) => {
       </div>
       {isActive && (
         <div className="accordion-content">
-          {newContent.map((line) => (
-            <p key={title} className="accordion-p">
+          {newContent.map((line, index) => (
+            <p key={index} className="accordion-p">
               {line}
             </p>
           ))}
