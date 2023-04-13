@@ -29,20 +29,20 @@ This repo is home for the codebase that powers Urban Apparel, an e-commerce clot
 
 1. Home view:
 <div align="center">
-    <img src="./public/preview/home.gif" alt="Preview of Urban Apparel, part 1" width="600" />
+    <img src="/preview/home.gif" alt="Preview of Urban Apparel, part 1" width="600" />
 </div>
 
 2. Browse Products view:
 <div align="center">
-    <img src="./public/preview/browse.gif" alt="Preview of Urban Apparel, part 2" width="600" />
+    <img src="/preview/browse.gif" alt="Preview of Urban Apparel, part 2" width="600" />
 </div>
 
 3. Product Details / Add to Bag view:
 <div align="center">
-    <img src="./public/preview/details-bag.gif" alt="Preview of Urban Apparel, part 3" width="600" />
+    <img src="/preview/details-bag.gif" alt="Preview of Urban Apparel, part 3" width="600" />
 </div>
 
 4. Edit Shopping Bag / Checkout view:
 <div align="center">
-    <img src="./public/preview/edit-checkout.gif" alt="Preview of Urban Apparel, part 4" width="600" />
+    <img src="/preview/edit-checkout.gif" alt="Preview of Urban Apparel, part 4" width="600" />
 </div>
