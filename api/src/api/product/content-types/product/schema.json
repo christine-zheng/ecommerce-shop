@@ -66,6 +66,13 @@
         "featured",
         "trending"
       ]
+    },
+    "vendor": {
+      "type": "string",
+      "default": "Urban Apparel"
+    },
+    "sku": {
+      "type": "biginteger"
     }
   }
 }
