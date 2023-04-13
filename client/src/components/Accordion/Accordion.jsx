@@ -9,7 +9,6 @@ const Accordion = ({ title, content }) => {
   const [isActive, setIsActive] = useState(false);
 
   const newContent = content.split('\n');
-  console.log('new content: ', newContent);
 
   return (
     <div className="accordion">
@@ -26,7 +25,9 @@ const Accordion = ({ title, content }) => {
       {isActive && (
         <div className="accordion-content">
           {newContent.map((line) => (
-            <p className="accordion-p">{line}</p>
+            <p key={title} className="accordion-p">
+              {line}
+            </p>
           ))}
         </div>
       )}
